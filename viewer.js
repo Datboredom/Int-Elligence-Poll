@@ -7,7 +7,7 @@ function onFirstClick() {
 var secondclicks = 0;
 function onSecondClick() {
     secondclicks += 1;
-    document.getElementById("Second").innerHTML = secondclicks;
+    document.getElemenById("Second").innerHTML = secondclicks;
     CheckAnswer();
 };
 
