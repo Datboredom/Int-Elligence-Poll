@@ -2,12 +2,14 @@ var firstclicks = 0;
 function onFirstClick() {
     firstclicks += 1;
     document.getElementById("First").innerHTML = firstclicks;
+    document.getElementById("formFieldSet").disabled = true;
     CheckAnswer();
 };
 var secondclicks = 0;
 function onSecondClick() {
     secondclicks += 1;
-    document.getElemenById("Second").innerHTML = secondclicks;
+    document.getElementById("Second").innerHTML = secondclicks;
+    document.getElementById("formFieldSet").disabled = true;
     CheckAnswer();
 };
 
@@ -15,12 +17,14 @@ var thirdclicks = 0;
 function onThirdClick() {
     thirdclicks += 1;
     document.getElementById("Third").innerHTML = thirdclicks;
+    document.getElementById("formFieldSet").disabled = true;
     CheckAnswer();
 };
 var fourthclicks = 0;
 function onFourthClick() {
     fourthclicks += 1;
     document.getElementById("Fourth").innerHTML = fourthclicks;
+    document.getElementById("formFieldSet").disabled = true;
     CheckAnswer();
 };
 function CheckAnswer() {
