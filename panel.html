@@ -14,7 +14,7 @@
 
     <style>
         body {
-            background-image: url("castle.jpg");
+            background-color: black;
             background-size: 500px;
         }
 
@@ -40,18 +40,17 @@
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            position: 3;
             font-size: 14px;
             margin: 4px 2px;
             cursor: pointer;
-            position: relative;
+            position: static;
             left: 50px;
         }
     </style>
     <h1>Which Adventure Do You Want To Experience?</h1>
 
     <fieldset id="formFieldSet">
-        <form id="form1" name="form1" method="GET" target="_blank" action="#">
+        <form id="form1" name="form1" method="GET" target="_blank" action="/answers">
             <div id="poll" style="text-align:center" ;>
                 <br />
                 <button class="button" type="button" onClick="onFirstClick()">Medieval</button>
