@@ -1,0 +1,22 @@
+{
+  "name": "int-elligence-poll",
+  "version": "1.0.0",
+  "description": "voting",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Datboredom/Int-Elligence-Poll.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Datboredom/Int-Elligence-Poll/issues"
+  },
+  "homepage": "https://github.com/Datboredom/Int-Elligence-Poll#readme",
+  "dependencies": {
+    "hapi": "^18.1.0"
+  }
+}
