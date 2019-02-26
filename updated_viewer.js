@@ -27,37 +27,34 @@ function onFourthClick() {
     document.getElementById("formFieldSet").disabled = true;
     CheckAnswer();
 };
-var resetClick = 0;
+//var resetClick = 0;
 function onResetClick() {
-    resetClick += 1;
+    document.getElementById("formFieldSet").disabled = false;
+    //resetClick += 1;
     firstclicks = 0;
     secondclicks = 0;
     thirdclicks = 0;
     fourthclicks = 0;
-    document.getElementById("Reset Poll").innerHTML = resetClick;
+   // document.getElementById("Reset_Poll").innerHTML = resetClick;
     document.getElementById("First").innerHTML = firstclicks;
     document.getElementById("Second").innerHTML = secondclicks;
     document.getElementById("Third").innerHTML = thirdclicks;
     document.getElementById("Fourth").innerHTML = fourthclicks;
-    document.getElementById("formFieldSet").disabled = true;
     CheckAnswer();
 };
 function CheckAnswer() {
     var Answer = "";
-    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks, resetClick) == firstclicks) {
+    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == firstclicks) {
         Answer = "Medieval";
     }
-    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks, resetClick) == secondclicks) {
+    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == secondclicks) {
         Answer = "Futuristic";
     }
-    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks, resetClick) == thirdclicks) {
+    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == thirdclicks) {
         Answer = "Apocalyptic";
     }
-    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks, resetClick) == fourthclicks) {
+    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == fourthclicks) {
         Answer = "Modern";
-    }
-    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks, resetClick) == resetClick) {
-      Answer = "Reset Poll";
     }
     document.getElementById("Answer").innerHTML = Answer;
 }
