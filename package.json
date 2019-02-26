@@ -2,7 +2,7 @@
   "name": "int-elligence-poll",
   "version": "1.0.0",
   "description": "voting",
-  "main": "backend.js",
+  "main": "updated_viewer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/Datboredom/Int-Elligence-Poll#readme",
   "dependencies": {
-    "hapi": "^18.1.0"
+    "boom": "^7.3.0",
+    "commander": "^2.19.0",
+    "hapi": "^18.1.0",
+    "jsonwebtoken": "^8.5.0",
+    "request": "^2.88.0"
   }
 }
