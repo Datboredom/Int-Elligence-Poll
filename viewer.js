@@ -142,15 +142,27 @@ function CheckAnswer() {
     var Answer = "";
     if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == firstclicks) {
         Answer = "Medieval";
+        if (firstclicks == 0){
+                    Answer = " ";
+        }
     }
     if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == secondclicks) {
         Answer = "Futuristic";
+        if (secondclicks == 0){
+                    Answer = " ";
+        }
     }
     if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == thirdclicks) {
         Answer = "Apocalyptic";
+        if (thirdclicks == 0){
+                    Answer = " ";
+        }
     }
     if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == fourthclicks) {
         Answer = "Modern";
+        if (fourthclicks == 0){
+            Answer = " ";
+        }
     }
     document.getElementById("Answer").innerHTML = Answer;
     return Answer;
