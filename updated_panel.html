@@ -4,15 +4,15 @@
     <title>Viewer Page</title>
 </head>
 <body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-    <div id="app" class="full-height"></div>
-    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
-    <!-- If you use any external libraries, such as jQuery, you must include
-      them as part of your extension.  Twitch does not allow extensions to link
-      to external libraries. -->
-    <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
-    <script src="viewer.js" type="text/javascript"></script>
+<div id="app" class="full-height"></div>
+<script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+<!-- If you use any external libraries, such as jQuery, you must include
+  them as part of your extension.  Twitch does not allow extensions to link
+  to external libraries. -->
+<script src="jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="viewer.js" type="text/javascript"></script>
 
-    <style>
+<style>
         body {
             background-color: black;
             background-size: 500px;
@@ -44,32 +44,32 @@
             left: 50px;
         }
     </style>
-    <h1>Which Adventure Do You Want To Experience?</h1>
+<h1>Which Adventure Do You Want To Experience?</h1>
 
-    <fieldset id="formFieldSet">
-        <form id="form1" name="form1" method="GET" target="_blank" action="/answers">
-            <div id="poll" style="text-align:center" ;>
-                <br />
-                <button class="button" type="button" onClick="onFirstClick()">Medieval</button>
-                <br>
-                <button class="button" type="button" onClick="onSecondClick()">Futuristic</button>
-                <br>
-                <button class="button" type="button" onClick="onThirdClick()">Apocalyptic</button>
-                <br>
-                <button class="button" type="button" onClick="onFourthClick()">Modern</button>
-                <br>
-            </div>
-        </form>
-    </fieldset>
-    <footer>
-        <p>Poll Results:</p>
-        <p>Medieval: <a id="First">0</a></p>
-        <p>Futuristic: <a id="Second">0</a></p>
-        <p>Apocalyptic: <a id="Third">0</a></p>
-        <p>Modern: <a id="Fourth">0</a></p>
-        <p>Voters Choice: <a id="Answer"></a></p>
-        <button class="button" type="button" onClick="onResetClick">Reset Poll</button>
-    </footer>
+<fieldset id="formFieldSet">
+    <form id="form1" name="form1" method="GET" target="_blank" action="/answers">
+        <div id="poll" style="text-align:center" ;>
+            <br />
+            <button class="button" type="button" onClick="onFirstClick()">Medieval</button>
+            <br>
+            <button class="button" type="button" onClick="onSecondClick()">Futuristic</button>
+            <br>
+            <button class="button" type="button" onClick="onThirdClick()">Apocalyptic</button>
+            <br>
+            <button class="button" type="button" onClick="onFourthClick()">Modern</button>
+            <br>
+        </div>
+    </form>
+</fieldset>
+<footer>
+    <p>Poll Results:</p>
+    <p>Medieval: <a id="First">0</a></p>
+    <p>Futuristic: <a id="Second">0</a></p>
+    <p>Apocalyptic: <a id="Third">0</a></p>
+    <p>Modern: <a id="Fourth">0</a></p>
+    <p>Voters Choice: <a id="Answer"></a></p>
+    <button class="button" type="button" onClick="onResetClick()">Reset_Poll</button>
+</footer>
 </body>
 
 </html>
