@@ -1,0 +1,35 @@
+<html>
+<body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: slategray">
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <!-- If you use any external libraries, such as jQuery, you must include
+      them as part of your extension.  Twitch does not allow extensions to link
+      to external libraries. -->
+    <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="viewer.js" type="text/javascript"></script>
+    <h1><?php echo $_POST["Question"]; ?><br></h1>
+    <fieldset id="formFieldSet">
+        <form id="form1" name="form1" method="GET" target="_blank" action="#">
+            <div id="poll" style="text-align:center" ;>
+                <br />
+                <button class="button" type="button" onClick="onFirstClick()"><?php echo $_POST["Answer1"]; ?><br></button>
+                <br>
+                <button class="button" type="button" onClick="onSecondClick()"><?php echo $_POST["Answer2"]; ?><br></button>
+                <br>
+                <button class="button" type="button" onClick="onThirdClick()"><?php echo $_POST["Answer3"]; ?><br></button>
+                <br>
+                <button class="button" type="button" onClick="onFourthClick()"><?php echo $_POST["Answer4"]; ?><br></button>
+                <br>
+            </div>
+        </form>
+    </fieldset>
+    <footer>
+        <p>Poll Results:</p>
+        <p><?php echo $_POST["Answer1"]; ?><br>: <a id="First">0</a></p>
+        <p><?php echo $_POST["Answer2"]; ?><br>: <a id="Second">0</a></p>
+        <p><?php echo $_POST["Answer3"]; ?><br>: <a id="Third">0</a></p>
+        <p><?php echo $_POST["Answer4"]; ?><br>: <a id="Fourth">0</a></p>
+        <p>Voters Choice: <a id="Answer"></a></p>
+    </footer>
+</body>
+
+</html>
