@@ -123,17 +123,19 @@ function togglePanelShowHide() {
     };
 
 function onResetClick() {
-    var form = document.getElementById("formFieldSet");
     document.getElementById("formFieldSet").disabled = false;
+    toggleShowHide();
+    //resetClick += 1;
     firstclicks = 0;
     secondclicks = 0;
     thirdclicks = 0;
     fourthclicks = 0;
+    // document.getElementById("Reset_Poll").innerHTML = resetClick;
     document.getElementById("First").innerHTML = firstclicks;
     document.getElementById("Second").innerHTML = secondclicks;
     document.getElementById("Third").innerHTML = thirdclicks;
     document.getElementById("Fourth").innerHTML = fourthclicks;
-    form.style.display = "block"
+    document.getElementById("Answer").innerHTML = Answer;
     CheckAnswer();
 };
 
