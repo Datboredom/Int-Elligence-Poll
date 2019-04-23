@@ -42,10 +42,22 @@ twitch.onAuthorized(function (auth) {
     $.ajax(requests.get);
 });
 
+function answerUpdates() {
+    //var firstButton = document.getElementById("FirstAns");
+    //var secondButton = document.getElementById("SecondAns");
+    //var thirdButton = document.getElementById("ThirdAns");
+    //var fourthButton = document.getElementById("FourthAns");
 
+    //firstButton.onclick = window.setInterval(onFirstClick, 3000);
+    //secondButton.onclick = window.setInterval(onSecondClick, 3000);
+    //thirdButton.onclick = window.setInterval(onThirdClick, 3000);
+    //fourthButton.onclick = window.setInterval(onFourthClick, 3000);
+    
+};
+window.setInterval(CheckAnswer, 3000);
 function updateBlock() {
     twitch.rig.log('working');
-    
+    //answerUpdates();
 }
 
 function logError(_, error, status) {
@@ -70,7 +82,6 @@ $(function () {
     // listen for incoming broadcast message from our EBS
     twitch.listen('global', function (target, contentType) {
         twitch.rig.log('Received answers.');
-        updateBlock();
     });
 });
 
@@ -83,89 +94,86 @@ function toggleShowHide() {
     }
 }
 
-function togglePanelShowHide() {
-    var formResults = document.getElementById("panelResults");
-    if (formResults.style.display === "block") {
-        formResults.style.display = "none";
-    } else {
-        formResults.style.display = "block";
-    }
-}
+var firstclicks = 0;
+var secondclicks = 0;
+var thirdclicks = 0;
+var fourthclicks = 0;
 
-    var firstclicks = 0;
     function onFirstClick() {
-        firstclicks += 1;
+        firstclicks++;
         document.getElementById("First").innerHTML = firstclicks;
         document.getElementById("formFieldSet").disabled = true;
-        CheckAnswer();
+        Answer = topAnswer;
     };
-    var secondclicks = 0;
     function onSecondClick() {
-        secondclicks += 1;
+        secondclicks++;
         document.getElementById("Second").innerHTML = secondclicks;
         document.getElementById("formFieldSet").disabled = true;
-        CheckAnswer();
+        Answer = topAnswer;
     };
-
-    var thirdclicks = 0;
     function onThirdClick() {
-        thirdclicks += 1;
+        thirdclicks++;
         document.getElementById("Third").innerHTML = thirdclicks;
         document.getElementById("formFieldSet").disabled = true;
-        CheckAnswer();
+        Answer = topAnswer;
     };
-    var fourthclicks = 0;
     function onFourthClick() {
-        fourthclicks += 1;
+        fourthclicks++;
         document.getElementById("Fourth").innerHTML = fourthclicks;
         document.getElementById("formFieldSet").disabled = true;
-        CheckAnswer();
+        Answer = topAnswer;
     };
 
 function onResetClick() {
+    //if (twitch.ext.onAuthorized(function (auth) {
+    //    twitch.rig.log(auth.userId);
+    //}))
     document.getElementById("formFieldSet").disabled = false;
     toggleShowHide();
     //resetClick += 1;
-    firstclicks = 0;
-    secondclicks = 0;
-    thirdclicks = 0;
-    fourthclicks = 0;
+    //firstclicks = 0;
+    //secondclicks = 0;
+    //thirdclicks = 0;
+    //fourthclicks = 0;
     // document.getElementById("Reset_Poll").innerHTML = resetClick;
     document.getElementById("First").innerHTML = firstclicks;
     document.getElementById("Second").innerHTML = secondclicks;
     document.getElementById("Third").innerHTML = thirdclicks;
     document.getElementById("Fourth").innerHTML = fourthclicks;
-    document.getElementById("Answer").innerHTML = Answer;
+    document.getElementById("Answers").innerHTML = Answer;
     CheckAnswer();
 };
 
+var Answer;
+var topAnswer;
 function CheckAnswer() {
-    var Answer = "";
-    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == firstclicks) {
+    topAnswer = Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks);
+    if (topAnswer == firstclicks) {
         Answer = "Medieval";
-        if (firstclicks == 0){
-                    Answer = " ";
-        }
     }
-    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == secondclicks) {
+    if (topAnswer == secondclicks) {
         Answer = "Futuristic";
-        if (secondclicks == 0){
-                    Answer = " ";
-        }
     }
-    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == thirdclicks) {
+    if (topAnswer == thirdclicks) {
         Answer = "Apocalyptic";
-        if (thirdclicks == 0){
-                    Answer = " ";
-        }
     }
-    if (Math.max(firstclicks, secondclicks, thirdclicks, fourthclicks) == fourthclicks) {
+    if (topAnswer == fourthclicks) {
         Answer = "Modern";
-        if (fourthclicks == 0){
-            Answer = " ";
-        }
     }
+    
     document.getElementById("Answer").innerHTML = Answer;
-    return Answer;
+    document.getElementById("AllAnswers").innerHTML = topAnswer;
+    
 }
 
+
+
+
+/* Viewer.js Changes: added AnswerUpdates, works (kinda) if you add set interval function. Made variables global. 
+ * Added Answer = topAnswer to each onClicks function. **You chose** almost works the way it's supposed to.
+ * Added onAuth function to resetclicks. Commented out variable initializations in resetclicks. Made Answer
+ * and topAnswer global. **Everybody chose** only prints value of Answer, instead of max answer (topAnswer).
+ * 
+ * Panel.html Changes: Added better IDs to each button. Added new html for topAnswer.
+ * 
+ * check differences between IDs in panel. continue building onAuth function to filter out brocaster view. */

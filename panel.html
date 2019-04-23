@@ -26,6 +26,7 @@
         }
 
         footer {
+            display: block;
             color: white;
             text-align: center;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -46,34 +47,43 @@
             position: static;
             left: 50px;
         }
+
+        .radio {
+            background-color: white;
+            color: white;
+            font-size: 10px;
+        }
     </style>
     <h1>Which Adventure Do You Want To Experience?</h1>
 
     <fieldset id="formFieldSet">
         <form id="form1" name="form1" method="GET" target="_blank" action="#">
-            <div id="poll" style="text-align:center" ;>
+            <div id="poll" style="text-align:center">
                 <br />
-                <button class="button" type="button" onClick="onFirstClick(); toggleShowHide();">Medieval</button>
+                <button class="button" id="FirstAns" type="button" onClick="onFirstClick(); toggleShowHide();">Medieval</button>
                 <br>
-                <button class="button" type="button" onClick="onSecondClick(); toggleShowHide();">Futuristic</button>
+                <button class="button" id="SecondAns" type="button" onClick="onSecondClick(); toggleShowHide();">Futuristic</button>
                 <br>
-                <button class="button" type="button" onClick="onThirdClick(); toggleShowHide();">Apocalyptic</button>
+                <button class="button" id="ThirdAns" type="button" onClick="onThirdClick(); toggleShowHide();">Apocalyptic</button>
                 <br>
-                <button class="button" type="button" onClick="onFourthClick(); toggleShowHide();">Modern</button>
+                <button class="button" id="FourthAns" type="button" onClick="onFourthClick(); toggleShowHide();">Modern</button>
                 <br>
             </div>
         </form>
     </fieldset>
 
-    <footer>
+
+    <footer id="panelResults">
         <p>Poll Results:</p>
         <p>Medieval: <a id="First">0</a></p>
         <p>Futuristic: <a id="Second">0</a></p>
         <p>Apocalyptic: <a id="Third">0</a></p>
         <p>Modern: <a id="Fourth">0</a></p>
-        <p>Voters Choice: <a id="Answer"></a></p>
-        <button class="button" type="button" onClick="onResetClick()">Reset_Poll</button>
+        <p>You chose: <a id="Answer"></a></p>
+        <p>Everyone chose: <a id="AllAnswers"></a></p>
+        <button class="button" type="button" onClick="onResetClick()">Reset Poll</button>
     </footer>
+
 </body>
 
 </html>
