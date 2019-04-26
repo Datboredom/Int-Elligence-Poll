@@ -11,15 +11,16 @@
       to external libraries. -->
     <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="viewer.js" type="text/javascript"></script>
-
     <style>
+
+
         body {
-            background-color: darkred;
+            background-color: #101010;
             background-size: 500px;
         }
 
         h1 {
-            color: black;
+            color: darkgrey;
             text-align: center;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 18px;
@@ -27,14 +28,14 @@
 
         footer {
             display: block;
-            color: black;
+            color: red;
             text-align: center;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             font-size: 19px;
         }
 
         .button {
-            background-color: black;
+            background-color: darkgray;
             border: 4px;
             color: darkred;
             padding: 9px 20px;
@@ -48,47 +49,35 @@
             left: 50px;
         }
 
-        .radio {
-            background-color: black;
-            color: black;
-            font-size: 10px;
-        }
-
         .field_set {
-            border-color: black
+            border-color: darkred;
         }
     </style>
     <h1>Twitch Polls</h1>
     <h1>Which Adventure Do You Want To Experience?</h1>
-
-    <fieldset id="formFieldSet", class="field_set">
+    <fieldset id="formFieldSet" , class="field_set">
         <form id="form1" name="form1" method="GET" target="_blank" action="#">
             <div id="poll" style="text-align:center">
                 <br />
-                <button class="button" id="FirstAns" type="button" onClick="onFirstClick(); toggleShowHide();">Medieval</button>
+                <button class="button" id="FirstAns" type="button" onClick="onFirstClick(); toggleShowHide();"><!--<?php echo $_POST["Answer1"]; ?>-->Medieval</button>
                 <br>
-                <button class="button" id="SecondAns" type="button" onClick="onSecondClick(); toggleShowHide();">Futuristic</button>
+                <button class="button" id="SecondAns" type="button" onClick="onSecondClick(); toggleShowHide();"><!--<?php echo $_POST["Answer2"]; ?>-->Futuristic</button>
                 <br>
-                <button class="button" id="ThirdAns" type="button" onClick="onThirdClick(); toggleShowHide();">Apocalyptic</button>
+                <button class="button" id="ThirdAns" type="button" onClick="onThirdClick(); toggleShowHide();"><!--<?php echo $_POST["Answer3"]; ?>-->Apocalyptic</button>
                 <br>
-                <button class="button" id="FourthAns" type="button" onClick="onFourthClick(); toggleShowHide();">Modern</button>
+                <button class="button" id="FourthAns" type="button" onClick="onFourthClick(); toggleShowHide();"><!--<?php echo $_POST["Answer4"]; ?>-->Modern</button>
                 <br>
             </div>
         </form>
     </fieldset>
-
-
     <footer id="panelResults">
         <p>Poll Results:</p>
-        <p>Medieval: <a id="First">0</a></p>
-        <p>Futuristic: <a id="Second">0</a></p>
-        <p>Apocalyptic: <a id="Third">0</a></p>
-        <p>Modern: <a id="Fourth">0</a></p>
+        <p><!--<?php echo $_POST["Answer1"]; ?><br>-->Medieval: <a id="First">0</a></p>
+        <p><!--<?php echo $_POST["Answer2"]; ?><br>-->Futuristic: <a id="Second">0</a></p>
+        <p><!--<?php echo $_POST["Answer3"]; ?><br>-->Apocalyptic: <a id="Third">0</a></p>
+        <p><!--<?php echo $_POST["Answer4"]; ?><br>-->Modern: <a id="Fourth">0</a></p>
         <p>You chose: <a id="Answer"></a></p>
-        <p>Everyone chose: <a id="AllAnswers"></a></p>
         <button class="button" type="button" onClick="onResetClick()">Reset Poll</button>
     </footer>
-
 </body>
-
 </html>
