@@ -4,6 +4,6 @@ This is a voting poll extension created to increase streamer-to-viewer interacti
 
 Goals:
   1) Allow the streamer to enter custom questions and answers pertaining thier content and channel.
-  2) Limit viewers to only voting once and the answer choices disappear after they choose.
+  2) Limit viewers to only voting once and the answer choices disappear after they choose. (Deeshai)
   3) Create a reset button that clears the results from the previous poll.
   4) Add backend functionality so the viewers' results update among all the viewers' panels. (Erinn)
